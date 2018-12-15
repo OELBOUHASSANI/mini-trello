@@ -1,0 +1,12 @@
+
+<div *ngIf ="card"
+id = "{{card.id}}"
+class ="card" 
+draggable="true"
+(dragstart)="dragAndDropServiceService.drag($event)" 
+>
+<span>{{card.title}}</span>
+</div>
+
+
+ 

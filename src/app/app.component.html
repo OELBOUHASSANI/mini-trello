@@ -1,7 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
- </div>
-<router-outlet></router-outlet>
+
+<header>
+<nav>
+    <a class="btn" >|||| Boards</a>
+    <a class="logo">POC Angular</a>
+</nav>
+</header>
+<br><br>
+<br><br>
+
+ <app-list
+  *ngFor="let list of dataService.lists" 
+ [list] = list>
+</app-list>
+
+ 
+
+ 

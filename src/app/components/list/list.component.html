@@ -1,0 +1,26 @@
+<div  *ngIf ="list"
+class="column"
+id="div-{{list.id}}" 
+(drop)="dragAndDropServiceService.drop($event)" 
+(dragover)="dragAndDropServiceService.allowDrop($event)">
+    <div class="column-header">
+        <h4 >{{list.title}}</h4>
+    </div>
+    <ul *ngIf="list && list.cards" class="card-list">
+        <li  *ngFor ="let card of list.cards">
+            <app-card [card]= "card"></app-card>
+        </li>
+    </ul>
+        <div class="add-card"
+         (click) = "allowAddCard()" >
+            <span 
+            *ngIf ="!addingCard">
+                Add a card...
+            </span>
+            <input class="card-input" 
+            [(ngModel)]="cartTitle"
+            *ngIf ="addingCard"
+            (keyup.enter)="addCard()"/>
+            
+        </div>
+</div>
