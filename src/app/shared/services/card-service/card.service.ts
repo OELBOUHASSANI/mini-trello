@@ -10,7 +10,7 @@ import { StringUtils } from '../../utils/StringUtils';
 export class CardService {
   constructor(private dataServicee: DataService) { }
 
-  addCard(cardTitle: string, list: List){
+  add(cardTitle: string, list: List){
     if(!StringUtils.isEmpty(cardTitle)){
       let card = new Card();
       card.title = cardTitle;

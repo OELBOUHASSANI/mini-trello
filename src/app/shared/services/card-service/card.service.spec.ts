@@ -19,7 +19,7 @@ describe('CardService', () => {
 
   it('should not call dataServiceService.addNewCard', () => {
     const service: CardService = TestBed.get(CardService);
-     service.addCard('', new List()); 
+     service.add('', new List()); 
      expect(addNewCardSpy).toHaveBeenCalledTimes(0);        
   });
   xit('should  call dataServiceService.addNewCard exactly one time', () => {
@@ -28,7 +28,7 @@ describe('CardService', () => {
     list.title = 'list 1';
     list.cards = []
     const service: CardService = TestBed.get(CardService);
-     service.addCard('new card', list); 
+     service.add('new card', list); 
      expect(addNewCardSpy).toHaveBeenCalledTimes(1);        
   });
 });

@@ -1,8 +1,8 @@
 <div  *ngIf ="list"
 class="column"
 id="div-{{list.id}}" 
-(drop)="dragAndDropServiceService.drop($event)" 
-(dragover)="dragAndDropServiceService.allowDrop($event)">
+(drop)="dragAndDropService.drop($event)" 
+(dragover)="dragAndDropService.allowDrop($event)">
     <div class="column-header">
         <h4 >{{list.title}}</h4>
     </div>
@@ -18,7 +18,7 @@ id="div-{{list.id}}"
                 Add a card...
             </span>
             <input class="card-input" 
-            [(ngModel)]="cartTitle"
+            [(ngModel)]="cardTitle"
             *ngIf ="addingCard"
             (keyup.enter)="addCard()"/>
             

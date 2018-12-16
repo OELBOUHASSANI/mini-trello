@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {DragAndDropServiceService} from 'src/app/shared/services/drag-and-drop/drag-and-drop-service.service'
+import {DragAndDropService} from 'src/app/shared/services/drag-and-drop/drag-and-drop.service'
 import List from 'src/app/models/list';
 import { CardService } from 'src/app/shared/services/card-service/card.service';
 import { StringUtils } from 'src/app/shared/utils/StringUtils';
@@ -9,13 +9,13 @@ import { StringUtils } from 'src/app/shared/utils/StringUtils';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent  {
 
   addingCard = false;
-  cartTitle = "";
+  cardTitle = "";
   @Input() list: List;
 
-  constructor(public dragAndDropServiceService: DragAndDropServiceService,
+  constructor(public dragAndDropService: DragAndDropService,
     private cardService: CardService) { }
   
   allowAddCard () {
@@ -23,13 +23,11 @@ export class ListComponent implements OnInit {
   }
 
   addCard () {
-    if(!StringUtils.isEmpty(this.cartTitle)) {
-      this.cardService.addCard(this.cartTitle, this.list);
-      this.cartTitle = ''
+    if(!!this.cardTitle) {
+      this.cardService.add(this.cardTitle, this.list);
+      this.cardTitle = ''
     }
     this.addingCard = false;
-  }
-  ngOnInit() {
   }
  
 }
