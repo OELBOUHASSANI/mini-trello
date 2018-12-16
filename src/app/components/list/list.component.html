@@ -5,7 +5,7 @@ id="div-{{list.id}}"
 (dragover)="dragAndDropService.allowDrop($event)">
     <div class="column-header">
         <h4 >{{list.title}}</h4>
-    </div>
+    </div> 
     <ul *ngIf="list && list.cards" class="card-list">
         <li  *ngFor ="let card of list.cards">
             <app-card [card]= "card"></app-card>

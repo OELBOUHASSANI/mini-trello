@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {DragAndDropService} from 'src/app/shared/services/drag-and-drop/drag-and-drop.service'
-import List from 'src/app/models/list';
+import List from 'src/app/shared/models/list';
 import { CardService } from 'src/app/shared/services/card-service/card.service';
 import { StringUtils } from 'src/app/shared/utils/StringUtils';
 

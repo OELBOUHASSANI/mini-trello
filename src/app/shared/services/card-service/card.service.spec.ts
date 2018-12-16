@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { DataService } from '../data-service/data-service';
 import { CardService } from './card.service';
-import List from 'src/app/models/list';
+import List from 'src/app/shared/models/list';
 
 describe('CardService', () => {
   let dataService: DataService;

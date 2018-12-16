@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import Card from 'src/app/models/card';
+import Card from 'src/app/shared/models/card';
 import {DragAndDropService} from 'src/app/shared/services/drag-and-drop/drag-and-drop.service'
 
 @Component({
